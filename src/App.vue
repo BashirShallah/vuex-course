@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <counter :counter="counter"
+             v-on:increase="increase" 
+             v-on:decrease="decrease"></counter>
+    <info :counter="counter" ></info>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import counter from "./components/counter";
+import info from "./components/info";
 
 export default {
   name: 'app',
+  data(){
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    increase(){
+      this.counter ++;
+    },
+    decrease(){
+      this.counter --;
+    }
+  },
   components: {
-    HelloWorld
+    counter,
+    info
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
