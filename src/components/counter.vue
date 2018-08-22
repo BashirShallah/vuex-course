@@ -7,11 +7,12 @@
 
         <button @click="increase">Increase</button>
         <button @click="decrease">Decrease</button>
+        <button @click="n_increase">+5</button>
     </div>
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapGetters, mapMutations} from "vuex";
 
 export default {
     computed:{
@@ -21,11 +22,11 @@ export default {
         }
     },
     methods: {
-        increase (){
-            this.$store.state.counter ++;
-        },
-        decrease (){
-            this.$store.state.counter --;
+        ... mapMutations(["increase", "decrease"]),
+        n_increase(){
+            this.$store.commit("n_increase", {
+                amount: 5
+            });
         }
     }
 }
