@@ -10,13 +10,17 @@
 
 <script>
 export default {
-    props: ["counter"],
+    computed:{
+        counter(){
+            return this.$store.state.counter;
+        }
+    },
     methods: {
         increase (){
-            this.$emit('increase');
+            this.$store.state.counter ++;
         },
         decrease (){
-            this.$emit('decrease');
+            this.$store.state.counter --;
         }
     }
 }
