@@ -8,6 +8,7 @@
         <button @click="increase">Increase</button>
         <button @click="decrease">Decrease</button>
         <button @click="n_increase">+5</button>
+        <button @click="increase_after_1_sec">increase_after_1_sec</button>
     </div>
 </template>
 
@@ -27,6 +28,9 @@ export default {
             this.$store.commit("n_increase", {
                 amount: 5
             });
+        },
+        increase_after_1_sec(){
+            this.$store.dispatch('increaseAfter1Second');
         }
     }
 }

@@ -28,6 +28,13 @@ const store = new Vuex.Store({
         n_increase(state, payload){
             state.counter += payload.amount;
         }
+    },
+    actions: {
+        increaseAfter1Second({commit}){
+            setTimeout(function (){
+                commit('increase');
+            }, 1000);
+        }
     }
 });
 
