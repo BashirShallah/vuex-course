@@ -10,6 +10,7 @@ const store = new Vuex.Store({
     },
     getters: {
         counter(state){
+            // console.log(state.likesModule.likes);
             return state.counter;
         },
         doubledCounter(state){
@@ -38,7 +39,7 @@ const store = new Vuex.Store({
         }
     },
     modules: {
-        likes: likesModule
+        likesModule: likesModule
     }
 });
 

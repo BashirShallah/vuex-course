@@ -4,7 +4,9 @@ const likesModule = {
         likes: 10
     },
     getters:{
-        likes(state){
+        likes(state, getters, rootState){
+            // console.log(state);
+            // console.log(rootState);
             return state.likes;
         },
         liked(state){
