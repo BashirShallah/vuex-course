@@ -1,6 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import {likesModule} from "./likesModule"
+import likesModule from "./likesModule"
 
 Vue.use(Vuex);
 
