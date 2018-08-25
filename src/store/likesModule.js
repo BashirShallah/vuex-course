@@ -1,9 +1,13 @@
 const likesModule = {
+    namespaced: true,
     state:{
         liked: false,
         likes: 10
     },
     getters:{
+        total(state){
+            return state.likes;
+        },
         likes(state, getters, rootState){
             // console.log(state);
             // console.log(rootState);

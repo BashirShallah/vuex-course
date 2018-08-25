@@ -9,6 +9,9 @@ const store = new Vuex.Store({
         counter: 0
     },
     getters: {
+        total(state){
+            return state.counter;
+        },
         counter(state){
             // console.log(state.likesModule.likes);
             return state.counter;
